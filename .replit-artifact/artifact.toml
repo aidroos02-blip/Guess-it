@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Guess It!"
+description = "A fast, colorful trivia game where players answer ten-question rounds, build daily streaks, compare scores on leaderboards, and share results with friends."
+version = "1.0.0"
+id = "artifacts/guess-it"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19453
+
+[services.development]
+run = "pnpm --filter @workspace/guess-it run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/guess-it", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/guess-it/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19453"
+BASE_PATH = "/"

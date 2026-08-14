@@ -1,0 +1,11 @@
+{
+  "name": "Guess It!",
+  "short_name": "Guess It!",
+  "description": "Think fast. Guess right. Beat your best score.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f2",
+  "theme_color": "#1c1b40",
+  "orientation": "portrait",
+  "icons": [{"src":"./favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

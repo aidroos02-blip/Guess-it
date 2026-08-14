@@ -1,0 +1,31 @@
+
+> guess-it@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 19 modules transformed.
+✗ Build failed in 987ms
+error during build:
+[vite:esbuild] Transform failed with 1 error:
+/workspaces/Guess-it/src/lib/api-client-react.tsx:102:833: ERROR: Expected identifier but found "{"
+file: /workspaces/Guess-it/src/lib/api-client-react.tsx:102:833
+
+Expected identifier but found "{"
+100 |  export const useListLeaderboards=(params:any)=>hook(getListLeaderboardsQueryKey(params),async()=>{const scores=read<G...
+101 |  export const useStartGame=()=>useMutation({mutationFn:async({data}:{data:{mode:'quick'|'daily';category?:string|null}...
+102 |  ...reak:Math.max(p.longestStreak,nextStreak)});return result;},{onSuccess:()=>{qc.invalidateQueries()}})};
+    |                                                                 ^
+103 |  export const useUpdateProfile=()=>{const qc=useQueryClient();return useMutation({mutationFn:async({data}:{data:Partia...
+104 |  export const useTrackAnalyticsEvent=()=>useMutation({mutationFn:async(data:any)=>{const events=read<any[]>('events',[...
+
+    at failureErrorWithLog (/workspaces/Guess-it/node_modules/esbuild/lib/main.js:1752:15)
+    at /workspaces/Guess-it/node_modules/esbuild/lib/main.js:1019:50
+    at responseCallbacks.<computed> (/workspaces/Guess-it/node_modules/esbuild/lib/main.js:886:9)
+    at handleIncomingPacket (/workspaces/Guess-it/node_modules/esbuild/lib/main.js:941:12)
+    at Socket.readFromStdout (/workspaces/Guess-it/node_modules/esbuild/lib/main.js:864:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
